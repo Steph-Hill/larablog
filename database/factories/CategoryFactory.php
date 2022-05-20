@@ -15,7 +15,7 @@ class CategoryFactory extends Factory
     {
         return [
             //
-            'name' => $this->faker->sentence(rand(5, 10), true)
+            'name' => $this->faker->sentence(rand(1, 2), true)
 
         ];
     }
