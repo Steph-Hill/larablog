@@ -17,7 +17,15 @@ class Post extends Model
 
         self::creating(function($post){
 
-            $post->user()->associate();
+            $post->user()->associate(auth()->user()->id);
+            $post->category()->associate(request()->category);
+        });
+
+        self::updating(function($post){
+
+            $post->category()->associate(request()->category);
+
+
         });
 
     }
